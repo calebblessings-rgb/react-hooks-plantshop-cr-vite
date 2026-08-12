@@ -1,7 +1,9 @@
+import '../setup'
 import React from 'react';
 import { render, fireEvent, within } from '@testing-library/react';
 import App from '../../components/App';
-import '@testing-library/jest-dom';
+import '@testing-library/jest-dom/vitest';
+import { describe, test, expect } from 'vitest';
 
 describe('3rd Deliverable', () => {
   test('marks a plant as sold out', async () => {

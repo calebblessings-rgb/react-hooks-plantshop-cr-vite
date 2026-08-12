@@ -1,7 +1,9 @@
+import '../setup'
 import React from 'react';
 import { render } from '@testing-library/react';
 import App from '../../components/App';
-import '@testing-library/jest-dom';
+import '@testing-library/jest-dom/vitest';
+import { describe, test, expect } from 'vitest';
 
 describe('1st Deliverable', () => {
   test('displays all plants on startup', async () => {

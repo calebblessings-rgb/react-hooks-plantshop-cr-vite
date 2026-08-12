@@ -1,7 +1,9 @@
+import '../setup'
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import App from '../../components/App';
-import '@testing-library/jest-dom';
+import '@testing-library/jest-dom/vitest';
+import { describe, test, expect } from 'vitest';
 
 describe('2nd Deliverable', () => {
     test('adds a new plant when the form is submitted', async () => {

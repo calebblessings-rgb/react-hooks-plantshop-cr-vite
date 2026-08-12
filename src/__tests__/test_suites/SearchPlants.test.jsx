@@ -1,7 +1,9 @@
+import '../setup'
 import React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react';
 import App from '../../components/App';
-import '@testing-library/jest-dom';
+import '@testing-library/jest-dom/vitest';
+import { describe, test, expect } from 'vitest';
 
 describe('4th Deliverable', () => {
   test('filters plants by name on search', async () => {
