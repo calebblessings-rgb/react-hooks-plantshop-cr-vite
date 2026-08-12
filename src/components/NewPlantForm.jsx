@@ -1,7 +1,7 @@
 import React from "react";
 
 function NewPlantForm({ addPlant }) {
-  const handleSumbit (event) => {
+  const handleSumbit = (event) => {
     event.PreventDefault();
     const newPlant = {
       name: event.target.name.value,
