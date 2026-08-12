@@ -1,6 +1,10 @@
-import { afterEach, vi } from 'vitest'
+import { afterEach, vi, expect } from 'vitest'
 import { cleanup } from '@testing-library/react'
-import '@testing-library/jest-dom/vitest'
+// Ensure jest-dom finds Vitest's expect during import
+global.expect = expect
+// Use dynamic import so jest-dom runs after `global.expect` is set
+await import('@testing-library/jest-dom')
+import fetch from 'node-fetch';
 
 // Polyfill jsdom's missing requestSubmit to support form button clicks
 if (typeof HTMLFormElement !== 'undefined' && !HTMLFormElement.prototype.requestSubmit) {
