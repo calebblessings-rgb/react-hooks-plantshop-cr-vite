@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import NewPlantForm from "./NewPlantForm";
 import PlantList from "./PlantList";
 import Search from "./Search";
@@ -25,7 +25,7 @@ function PlantPage() {
       .then((data) => setPlants([...plants, data]));
   };
   const handleSearch =(event) => {
-    setSearch=(event.target.value);
+    setSearch(event.target.value);
   }
 
   const filteredPlants = plants.filter((plant) =>
@@ -35,9 +35,8 @@ function PlantPage() {
   return (
     <main>
       <NewPlantForm  addPlant={addPlant}/>
-      <Search  handleSearch={handleSearch}/>
-      <PlantList  Plants={filteredPlants}          
-      />
+      <Search handleSearch={handleSearch} />
+      <PlantList plants={filteredPlants} />
     </main>
   );
 }

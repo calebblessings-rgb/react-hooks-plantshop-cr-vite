@@ -1,4 +1,4 @@
-import '../setup'
+import '../setup.js'
 import React from 'react';
 import { render } from '@testing-library/react';
 import App from '../../components/App';

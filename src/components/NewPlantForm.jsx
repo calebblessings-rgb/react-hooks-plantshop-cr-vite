@@ -1,20 +1,25 @@
 import React from "react";
 
 function NewPlantForm({ addPlant }) {
-  const handleSumbit = (event) => {
-    event.PreventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = event.currentTarget || (event.target && event.target.closest ? event.target.closest('form') : null);
+    if (!form) return;
+    const nameInput = form.querySelector('[name="name"]')
+    const imageInput = form.querySelector('[name="image"]')
+    const priceInput = form.querySelector('[name="price"]')
     const newPlant = {
-      name: event.target.name.value,
-      image: event.target.image.value,
-      price: event.target.price.value,
-    }
+      name: nameInput ? nameInput.value : '',
+      image: imageInput ? imageInput.value : '',
+      price: priceInput ? priceInput.value : '',
+    };
     addPlant(newPlant);
-    event.target.reset();
-  }
+    form.reset();
+  };
   return (
     <div className="new-plant-form">
       <h2>New Plant</h2>
-      <form onSubmit={handleSumbit}>
+      <form onSubmit={handleSubmit}>
         <input type="text"
          name="name" 
          placeholder="Plant name" />

@@ -1,4 +1,4 @@
-import '../setup'
+import '../setup.js'
 import React from 'react';
 import { render, fireEvent, within } from '@testing-library/react';
 import App from '../../components/App';
